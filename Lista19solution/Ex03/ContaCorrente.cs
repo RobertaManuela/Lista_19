@@ -20,12 +20,24 @@ namespace Ex03
 
         public void Depositar( double valor)
         {
-
+            if (valor <= 0) throw new ArgumentOutOfRangeException("O valor é inválido");
+            else
+                saldo = saldo + valor;
         }
 
         public virtual bool Sacar(double valor)
         {
+            if (valor <= 0)
+            {
+                throw new ArgumentOutOfRangeException("O valor é inválido");
+            }
 
+            if (saldo - valor < 0) {
+                return false;
+            }
+
+            else
+            saldo = saldo - valor; return true;
         }
 
         public double RetornarSaldo()
@@ -35,7 +47,7 @@ namespace Ex03
 
         public override string ToString()
         {
-            return base.ToString();
+            return $"{titular} - {NumeroConta} - {saldo}";
         }
     }
 }

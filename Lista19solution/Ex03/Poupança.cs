@@ -15,7 +15,7 @@ namespace Ex03
 
         public void Render(double juros)
         {
-
+            saldo = saldo + saldo * juros;
         }
     }
 }
