@@ -10,7 +10,7 @@ namespace Ex05
     {
         private string nome, fone;
 
-        public Cont(string n, string f)
+        public Contato(string n, string f)
         {
             nome = n;
             fone = f;
